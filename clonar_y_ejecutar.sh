@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # URL del repositorio que deseas clonar
-REPO_URL="https://github.com/usuario/nombre-del-repositorio.git"
+REPO_URL="https://github.com/olivercorrea/weatherApp1.git"
 
 # Clonar el repositorio
 git clone $REPO_URL
