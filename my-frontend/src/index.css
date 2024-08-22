@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* added a light gray background */
+}
+
+h1 {
+  color: #333; /* darkened the header text */
+  margin-bottom: 20px;
+}
+
+.weather-forecast-table {
+  /* added a custom class for the table */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.weather-forecast-table thead {
+  background-color: #f2f2f2;
+}
+
+.weather-forecast-table th,
+.weather-forecast-table td {
+  border: none;
+  padding: 12px;
+  text-align: left;
+}
+
+.weather-forecast-table th {
+  font-weight: bold;
+  color: #333;
+}
+
+.weather-forecast-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.weather-forecast-table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
