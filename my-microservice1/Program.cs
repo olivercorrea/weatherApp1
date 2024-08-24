@@ -17,7 +17,13 @@ if (app.Environment.IsDevelopment())
 }
 
 //! CORS, importante para permitir que el frontend haga solicitudes a él
-app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+app.UseCors(policy => policy
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithExposedHeaders("Content-Type")
+    .WithExposedHeaders("Authorization")
+);
 
 app.UseStaticFiles();
 
