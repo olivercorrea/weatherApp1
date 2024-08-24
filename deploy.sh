@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Create a Docker network
-# docker network create my-network
+# Crear una red Docker personalizada
+docker network create my-network || true
 
 # Detener y eliminar los contenedores existentes si existen
 docker stop my-microservice-container my-frontend-container 2>/dev/null
@@ -11,13 +11,13 @@ docker rm my-microservice-container my-frontend-container 2>/dev/null
 docker build -t my-microservice1 -f ./my-microservice1/Dockerfile ./my-microservice1
 
 # Ejecutar el contenedor del microservicio
-docker run -d -p 8080:80 --name my-microservice-container my-microservice1
+docker run -d --network my-network -p 8080:80 --name my-microservice-container my-microservice1 #
 
 # Construir la imagen Docker para el frontend
 docker build -t my-frontend -f ./my-frontend/Dockerfile ./my-frontend
 
 # Ejecutar el contenedor del frontend
-docker run -d -p 8081:80 --name my-frontend-container my-frontend
+docker run -d --network my-network -p 8081:80 --name my-frontend-container my-frontend
 
 echo "Aplicación en ejecución:"
 

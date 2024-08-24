@@ -64,7 +64,10 @@ function App() {
   const [weatherData, setWeatherData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/weatherforecast')
+    const apiHost = window.location.hostname; // Usar el hostname actual
+    const apiUrl = `http://${apiHost}:8080/weatherforecast`;
+
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setWeatherData(data))
       .catch((error) => console.error('Error fetching data:', error));
